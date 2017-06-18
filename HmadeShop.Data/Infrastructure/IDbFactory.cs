@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HmadeShop.Model
+namespace HmadeShop.Data.Infrastructure
 {
-    public class Class1
+    public interface IDbFactory: IDisposable
     {
+        HmadeShopDbContext Init();
     }
 }
