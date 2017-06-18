@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace HmadeShop.Data.Responsitories
 {
-    public interface IProductRepository
+    public interface IProductRepository:IRepository<Product>
     {
 
     }

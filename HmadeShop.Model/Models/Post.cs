@@ -1,6 +1,8 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using HmadeShop.Model.Abstract;
+using System.Collections;
+using System.Collections.Generic;
 
 namespace HmadeShop.Model.Models
 {
@@ -37,5 +39,8 @@ namespace HmadeShop.Model.Models
 
         [ForeignKey("CategoryID")]
         public virtual PostCategory PostCategory { set; get; }
+
+     
+        public virtual IEnumerable<PostTag> PostTags { set; get; }
     }
 }
