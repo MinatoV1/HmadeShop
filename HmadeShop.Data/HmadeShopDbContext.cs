@@ -1,4 +1,5 @@
 ﻿using HmadeShop.Model.Models;
+using Microsoft.AspNet.Identity.EntityFramework;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -8,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace HmadeShop.Data
 {
-    public class HmadeShopDbContext : DbContext
+    public class HmadeShopDbContext : IdentityDbContext<ApplicationUser>
     {
         public HmadeShopDbContext() : base("HmadeShopConnection")
         {
@@ -36,9 +37,17 @@ namespace HmadeShop.Data
         public DbSet<Tag> Tags { get; set; }
         public DbSet<VisitorStatistic> VisitorStatistics { get; set; }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        public DbSet<Error> Errors { get; set; }
+     
+        public static HmadeShopDbContext Create()
         {
-            base.OnModelCreating(modelBuilder);
+            return new HmadeShopDbContext();
+        }
+
+        protected override void OnModelCreating(DbModelBuilder builder)
+        {
+            builder.Entity<IdentityUserRole>().HasKey(i => new { i.UserId, i.RoleId });
+            builder.Entity<IdentityUserLogin>().HasKey(i => i.UserId);
         }
     }
 }

@@ -10,14 +10,25 @@ namespace HmadeShop.Model.Abstract
     public abstract class Auditable: IAuditable
     {
 
-       public DateTime? CreatedDate { get; set; }
-        public string CreateBy { get; set; }
-        public DateTime? UpdateDate { get; set; }
-        public string UpdateBy { get; set; }
-        //khai báo interface ko có public private
+        public DateTime? CreatedDate { set; get; }
+
+        [MaxLength(256)]
+        public string CreatedBy { set; get; }
+
+        public DateTime? UpdatedDate { set; get; }
+
+        [MaxLength(256)]
+        public string UpdatedBy { set; get; }
+
+        [MaxLength(256)]
         public string MetaKeyword { set; get; }
+
+        [MaxLength(256)]
         public string MetaDescription { set; get; }
 
-        public bool Status { get; set; }
+        public bool Status { set; get; }
+
+
+     
     }
 }

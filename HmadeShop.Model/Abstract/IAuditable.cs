@@ -9,20 +9,14 @@ namespace HmadeShop.Model.Abstract
 {
     public interface IAuditable
     {
-       
-        DateTime? CreatedDate { get; set; }
-        [MaxLength(256)]
-        string CreateBy { get; set; }
-        DateTime? UpdateDate { get; set; }
-        [MaxLength(256)]
-        string UpdateBy { get; set; }
+        DateTime? CreatedDate { set; get; }
+        string CreatedBy { set; get; }
+        DateTime? UpdatedDate { set; get; }
+        string UpdatedBy { set; get; }
 
-        [MaxLength(256)]
         string MetaKeyword { set; get; }
-        [MaxLength(256)]
         string MetaDescription { set; get; }
 
-        bool Status { get; set; }
-        //khai báo interface ko có public private
+        bool Status { set; get; }
     }
 }
