@@ -1,7 +1,9 @@
 ﻿/// <reference path="C:\Users\nguye\OneDrive\Documents\ASP.NET\HmadeShop\HmadeShop\HmadeShop.Web\Assets/Admin/libs/angular/angular.js" />
 
 (function () {
-    angular.module('hmadeshop', ['hmadeshop.common', 'hmadeshop.products']).config(config);
+    angular.module('hmadeshop', ['hmadeshop.common',
+        'hmadeshop.products',
+        'hmadeshop.product_categories']).config(config);
     config.$inject = ['$stateProvider', '$urlRouterProvider'];
     function config($stateProvider, $urlRouterProvider) {
         $stateProvider.state('home', {

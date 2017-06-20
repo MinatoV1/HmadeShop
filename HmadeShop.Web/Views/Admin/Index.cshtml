@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="~/Assets/Admin/css/AdminLTE.min.css">
+    <link href="~/Assets/Admin/libs/toastr/toastr.css" rel="stylesheet" />
 
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
@@ -225,16 +226,15 @@
                     <li class="treeview">
                         <a href="#">
                             <i class="fa fa-files-o"></i>
-                            <span>Layout Options</span>
+                            <span>Sản phẩm</span>
                             <span class="pull-right-container">
                                 <span class="label label-primary pull-right">4</span>
                             </span>
                         </a>
                         <ul class="treeview-menu">
-                            <li><a href="../layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
-                            <li><a href="../layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
-                            <li><a href="../layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
-                            <li><a href="../layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
+                            <li><a ui-sref="product_category"><i class="fa fa-circle-o"></i>Danh mục sản phẩm</a></li>
+                            <li><a href="../layout/boxed.html"><i class="fa fa-circle-o"></i> Sản Phẩm</a></li>
+                        
                         </ul>
                     </li>
                     <li>
@@ -580,18 +580,30 @@
     <script src="~/Assets/Admin/libs/fastclick/lib/fastclick.js"></script>
     <!-- AdminLTE App -->
     <script src="~/Assets/Admin/js/app.min.js"></script>
+    <!--Toastr-->
+    <script src="~/Assets/Admin/libs/toastr/toastr.js"></script>
 
     <!-- Begin embed angularJS-->
     <script src="~/Assets/Admin/libs/angular/angular.js"></script>
     <script src="~/Assets/Admin/libs/angular-ui-router/release/angular-ui-router.js"></script>
+
+
+
     <!-- Goi nhung cai module rieng le truoc sau do moi toi app.js roi toi cac Controller-->
     <script src="~/app/shared/modules/hmadeshop.common.js"></script>
     <script src="~/app/components/products/product.module.js"></script>
-  
+    <script src="~/app/components/products_categories/productCategory.module.js"></script>
+
+    <script src="~/app/shared/service/apiService.js"></script>
+    <script src="~/app/shared/service/notificationService.js"></script>
+    <script src="~/app/shared/filters/statusFilter.js"></script>
+    <script src="~/app/shared/directive/pagerDirective.js"></script>
+
     <script src="~/app/app.js"></script>
     <script src="~/app/components/home/homeController.js"></script>
     <script src="~/app/components/products/productAddController.js"></script>
     <script src="~/app/components/products/productListController.js"></script>
+    <script src="~/app/components/products_categories/productCategoryListController.js"></script>
 
 </body>
 </html>

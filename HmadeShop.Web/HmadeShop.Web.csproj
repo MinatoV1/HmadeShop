@@ -203,6 +203,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\Core\ApiControllerBase.cs" />
+    <Compile Include="Infrastructure\Core\PaginationSet.cs" />
     <Compile Include="Infrastructure\Extensions\EntityExtensions.cs" />
     <Compile Include="Mappings\AutoMapperConfiguration.cs" />
     <Compile Include="Models\PostCategoryViewModel.cs" />
@@ -224,6 +225,14 @@
     <Content Include="app\components\products\productListController.js" />
     <Content Include="app\components\products\productEditView.html" />
     <Content Include="app\components\products\productListView.html" />
+    <Content Include="app\components\products_categories\productCategory.module.js" />
+    <Content Include="app\components\products_categories\productCategoryListController.js" />
+    <Content Include="app\components\products_categories\productCategoryListView.html" />
+    <Content Include="app\shared\directive\pagerDirective.html" />
+    <Content Include="app\shared\directive\pagerDirective.js" />
+    <Content Include="app\shared\filters\statusFilter.js" />
+    <Content Include="app\shared\service\apiService.js" />
+    <Content Include="app\shared\service\notificationService.js" />
     <Content Include="Assets\Admin\css\AdminLTE.css" />
     <Content Include="Assets\Admin\css\AdminLTE.min.css" />
     <Content Include="Assets\Admin\css\alt\AdminLTE-bootstrap-social.css" />
@@ -584,6 +593,10 @@
     <Content Include="Assets\Admin\libs\slimScroll\examples\style.css" />
     <Content Include="Assets\Admin\libs\slimScroll\jquery.slimscroll.js" />
     <Content Include="Assets\Admin\libs\slimScroll\jquery.slimscroll.min.js" />
+    <Content Include="Assets\Admin\libs\toastr\toastr.css" />
+    <Content Include="Assets\Admin\libs\toastr\toastr.js" />
+    <Content Include="Assets\Admin\libs\toastr\toastr.min.css" />
+    <Content Include="Assets\Admin\libs\toastr\toastr.min.js" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
@@ -597,11 +610,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="app\components\orders\" />
-    <Folder Include="app\components\products_categories\" />
     <Folder Include="app\components\users\" />
     <Folder Include="app\shared\footer\" />
     <Folder Include="app\shared\navigation\" />
-    <Folder Include="app\shared\service\" />
     <Folder Include="Assets\Client\" />
   </ItemGroup>
   <ItemGroup>
@@ -804,6 +815,13 @@
     <Content Include="Assets\Admin\libs\bootstrap\package.json" />
     <Content Include="Assets\Admin\libs\bootstrap\README.md" />
     <Content Include="app\shared\modules\hmadeshop.common.js" />
+    <Content Include="Assets\Admin\libs\toastr\.bower.json" />
+    <Content Include="Assets\Admin\libs\toastr\bower.json" />
+    <Content Include="Assets\Admin\libs\toastr\LICENSE" />
+    <Content Include="Assets\Admin\libs\toastr\README.md" />
+    <Content Include="Assets\Admin\libs\toastr\toastr.js.map" />
+    <Content Include="Assets\Admin\libs\toastr\toastr.less" />
+    <Content Include="Assets\Admin\libs\toastr\toastr.scss" />
     <None Include="Project_Readme.html" />
     <Content Include="Views\Admin\Index.cshtml" />
   </ItemGroup>
