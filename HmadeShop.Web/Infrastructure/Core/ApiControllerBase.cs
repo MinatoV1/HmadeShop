@@ -20,14 +20,13 @@ namespace HmadeShop.Web.Infrastructure.Core
             this._errorService = errorService;
         }
 
-        protected HttpResponseMessage CreateHttpRespone(HttpRequestMessage requestMessage, Func<HttpResponseMessage> function)
+        protected HttpResponseMessage CreateHttpResponse(HttpRequestMessage requestMessage, Func<HttpResponseMessage> function)
         {
             HttpResponseMessage response = null;
             try
             {
                 response = function.Invoke();
             }
-            //lỗi vailid do được báo ở trường nào nhưng không nhìn thấy
             catch (DbEntityValidationException ex)
             {
                 foreach (var eve in ex.EntityValidationErrors)

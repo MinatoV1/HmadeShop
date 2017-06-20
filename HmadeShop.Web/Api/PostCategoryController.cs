@@ -4,6 +4,7 @@ using HmadeShop.Service;
 using HmadeShop.Web.Infrastructure.Core;
 using HmadeShop.Web.Infrastructure.Extensions;
 using HmadeShop.Web.Mappings;
+using HmadeShop.Web.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -25,7 +26,7 @@ namespace HmadeShop.Web.Api
         [Route("getall")]
         public HttpResponseMessage Get(HttpRequestMessage request)
         {
-            return CreateHttpRespone(request, () =>
+            return CreateHttpResponse(request, () =>
             {
 
                 var category = _postCategoryService.GetAll();
@@ -41,7 +42,7 @@ namespace HmadeShop.Web.Api
         [Route("add")]
         public HttpResponseMessage Post(HttpRequestMessage request, PostCategoryViewModel postCategoryVM)
         {
-            return CreateHttpRespone(request, () =>
+            return CreateHttpResponse(request, () =>
             {
                 HttpResponseMessage reponse = null;
                 if (ModelState.IsValid)
@@ -65,7 +66,7 @@ namespace HmadeShop.Web.Api
         [Route("update")]
         public HttpResponseMessage Put(HttpRequestMessage request, PostCategoryViewModel postCategoryVM)
         {
-            return CreateHttpRespone(request, () =>
+            return CreateHttpResponse(request, () =>
             {
                 HttpResponseMessage reponse = null;
                 if (ModelState.IsValid)
@@ -88,7 +89,7 @@ namespace HmadeShop.Web.Api
 
         public HttpResponseMessage Delete(HttpRequestMessage request, int id)
         {
-            return CreateHttpRespone(request, () =>
+            return CreateHttpResponse(request, () =>
             {
                 HttpResponseMessage reponse = null;
                 if (ModelState.IsValid)

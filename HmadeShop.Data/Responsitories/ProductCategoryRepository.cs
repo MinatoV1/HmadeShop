@@ -12,9 +12,9 @@ namespace HmadeShop.Data.Responsitories
     {
         IEnumerable<ProductCategory> GetByAlias(string alias);
     }
-    class ProductCategoryRepository : RepositoryBase<ProductCategory>
+    public class ProductCategoryRepository : RepositoryBase<ProductCategory>, IProductCategoryRepository
     {
-        public ProductCategoryRepository(DbFactory dbFactory)
+        public ProductCategoryRepository(IDbFactory dbFactory)
             : base(dbFactory)
         {
 
