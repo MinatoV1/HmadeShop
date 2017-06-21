@@ -24,6 +24,7 @@ namespace HmadeShop.Web.Api
 
         }
         [Route("getall")]
+        [HttpGet]
         public HttpResponseMessage Get(HttpRequestMessage request, string keyword,int page, int pageSize)
         {
             return CreateHttpResponse(request, () =>
@@ -52,6 +53,50 @@ namespace HmadeShop.Web.Api
                 var response = request.CreateResponse(HttpStatusCode.OK, paginationSet);
                 return response;
             });
+        }
+
+        [Route("getallparent")]
+        [HttpGet]
+        public HttpResponseMessage GetParentProductCategory(HttpRequestMessage request)
+        {
+            return CreateHttpResponse(request, () =>
+            {
+               
+                var model = _productCategoryService.GetAll();// thằng này get tất cả
+
+                var responseData = Mapper.Map<IEnumerable<ProductCategory>, IEnumerable<ProductCategoryViewModel>>(model);
+
+                var response = request.CreateResponse(HttpStatusCode.OK, responseData);
+                return response;
+            });
+        }
+        [Route("create")]
+        [HttpPost]
+        public HttpResponseMessage Create(HttpRequestMessage request, ProductCategoryViewModel productCategory)
+        {
+            return CreateHttpResponse(request, () =>
+             {
+                 HttpResponseMessage response = null;
+                 if(!ModelState.IsValid)
+                 {
+                     response = request.CreateResponse(HttpStatusCode.BadRequest, ModelState);
+                 }
+                 else
+                 {
+                     var newProductCategory = new ProductCategory();
+                     newProductCategory.UpdateProductCategory(productCategory);
+                     _productCategoryService.Add(newProductCategory);
+                     _productCategoryService.Save();
+
+                     var responseData = Mapper.Map<ProductCategory, ProductCategoryViewModel>(newProductCategory);
+
+                     response = request.CreateResponse(HttpStatusCode.Created, responseData);
+
+                 
+                 }
+                 return response;
+
+             });
         }
 
 
