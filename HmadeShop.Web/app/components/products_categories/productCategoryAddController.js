@@ -2,11 +2,7 @@
     app.controller('productCategoryAddController', productCategoryAddController);
     productCategoryAddController.$inject = ['$scope', 'apiService', 'notificationService','$state'];
     function productCategoryAddController($scope, apiService, notificationService) {
-        //Khai báo biến
-        //$scope.parentCategory = {
-        //    ID: 7,
-        //    Name:"nhucac"
-        //}
+
      
         //Khai báo hàm
         $scope.getParentProductCategories = getParentProductCategories;

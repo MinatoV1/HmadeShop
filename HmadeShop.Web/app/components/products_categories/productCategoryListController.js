@@ -8,7 +8,7 @@
         $scope.page = 0;
         $scope.pageCount = 0;
         $scope.totalCount = 0;
-        $scope.keyword = "";
+        $scope.keyword = '';
 
         //Khai báo hàm
         $scope.getListProductCategories = getListProductCategories;
@@ -27,20 +27,22 @@
                 params: {
                     keyword : $scope.keyword,
                     page : page,
-                    pageSize: 2
+                    pageSize: 15
                 }
             }
 
             apiService.get('/api/productcategory/getall', config, function (result) {
                 if (result.data.TotalCount == 0)
-                //{
-                //    notificationService.displayWarning("Đã tìm thấy " + result.data.TotalCount+" bản ghi");
-                //}
-
+                {
+                     notificationService.displayWarning('Không có bản ghi nào được tìm thấy.');
+                }
+                
                 $scope.productCategory = result.data.Items;
                 $scope.page = result.data.Page;
                 $scope.pageCount = result.data.TotalPages;
                 $scope.totalCount = result.data.TotalCount;
+                console.log('Load product category cac');
+
             }, function () {
                 console.log('Load product category failed');
 

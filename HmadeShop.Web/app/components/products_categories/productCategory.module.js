@@ -18,7 +18,12 @@
             controller: "productCategoryAddController"
 
         });
+        $stateProvider.state('product_categories_edit', {
+            url: "/product_categories_edit/:id",
+            templateUrl: "/app/components/products_categories/productCategoryEditView.html",
+            controller: "productCategoryEditController"
 
+        });
 
     }
 })();
